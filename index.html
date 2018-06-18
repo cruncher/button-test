@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="@cruncher" />
+	<meta name="description" content="A CSS test." />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>Cruncher test</title>
+	<script>document.documentElement.className = 'js';</script>
+
+	<link rel="stylesheet" href="css/html.css" />
+	<link rel="stylesheet" href="css/type.css" />
+	<link rel="stylesheet" href="css/block.css" />
+	<link rel="stylesheet" href="css/button.css" />
+</head>
+
+<body>
+	<section>
+		<h1>1. Style the class <code>.button</code></h1>
+
+		<br/><br/>
+
+		<a class="button" href="#">Button</a>
+		<a class="button" href="#">Button with lots of text</a>
+	</section>
+
+	<section>
+		<h1>2. Style the class <code>.tab-button</code></h1>
+
+		<br/><br/>
+
+		<div class="buttons-block block">
+			<a class="tab-button button" href="#article-1">First tab</a
+			><a class="tab-button button" href="#article-2">Second tab</a
+			><a class="tab-button button" href="#article-3">Third tab</a
+			><a class="tab-button button" href="#article-4">Fourth tab with lots of text</a>
+		</div>
+
+		<article id="article-1" class="tab-block block switchable active">
+			Content 1
+		</article
+
+		><article id="article-2" class="tab-block block switchable">
+			Content 2
+		</article
+
+		><article id="article-3" class="tab-block block switchable">
+			Content 3
+		</article
+
+		><article id="article-4" class="tab-block block switchable">
+			Content 4
+		</article>
+	</section>
+
+	<!-- Script for making tabs work -->
+	<script type="module" src="http://stephen.band/dom/js/dom.switchable.js"></script>
+</body>
+</html>

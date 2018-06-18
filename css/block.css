@@ -1,0 +1,106 @@
+/*
+Layout.
+
+Styleguide: 1
+*/
+
+/*
+.block
+
+<p>For layout. There are two ways a <code>.block</code> can be styled: as a
+<code>block</code>, for a vertical layout, or as <code>inline-block</code>, for
+a horizontal layout. <code>block</code> by default, obviously.</p>
+<p>Any <code>.block</code> child of a <code>.grid-block</code> becomes an
+inline-block. Grid layout can be designed by adding
+<code>.grid-<i>n</i>/<i>d</i></code> classes to those children.</p>
+<p>Applied to a media tag like img, svg, video and canvas, <code>.block</code>
+will scale the element to fill the available width.</p>
+
+Styleguide: 1.1
+*/
+
+.block {
+	display: block;
+
+	/* Set as position parent */
+	position: relative;
+
+	/* Force img, video, svg to scale. */
+	height: auto;
+
+	/* Set them up to play nice as inline-blocks. */
+	vertical-align: top;
+	overflow: visible;
+
+	/* Negate possible spacing when .block is used on something typographic like
+	   a <p>, for example. Also, make blocks behave as centered wraps by default. */
+	margin: 0 auto;
+	padding: 0;
+}
+
+.block > img,
+.block > svg,
+.block > video,
+.block > canvas,
+.block > object,
+.block > embed,
+.block > iframe {
+	/* Don't allow media to break out of .block bounds. */
+	max-width: 100%;
+}
+
+
+/*
+.tab-block
+
+A block animated to behave as a tab that fades to reveal content when the class
+<code>active</code> is added.
+
+Styleguide: 4.tab-block
+*/
+
+.tab-block {
+	padding: 1.5rem;
+	border: 1px solid #999999;
+}
+
+.js .tab-block {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	vertical-align: top;
+
+	/* Give all tabs the same origin despite being consecutive inline-blocks.
+	   Requires spaceless HTML. */
+	margin-right: -100% !important;
+
+	visibility: hidden;
+	opacity: 0;
+	z-index: 1;
+
+	-webkit-transition-property: opacity, visibility;
+	        transition-property: opacity, visibility;
+	-webkit-transition-duration: 120ms;
+	        transition-duration: 120ms;
+	-webkit-transition-timing-function: ease-in;
+	        transition-timing-function: ease-in;
+
+	/* A nice bit of hardware acceleration should help the transitions run
+	   smoothly. */
+	-webkit-transform: translate3d(0,0,0);
+	    -ms-transform: translate3d(0,0,0);
+	        transform: translate3d(0,0,0);
+}
+
+.js .tab-block.active {
+	visibility: visible;
+	opacity: 1;
+	z-index: 2;
+
+	-webkit-transition-timing-function: ease-out;
+	        transition-timing-function: ease-out;
+}
+
+.js .tab-block.active {
+	z-index: 2;
+}
