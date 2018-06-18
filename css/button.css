@@ -75,6 +75,10 @@
 	border-bottom: 1px solid white;
 }
 
+.tab-button.on:focus {
+	border-color: #2391de;
+}
+
 .tab-button + .tab-button {
 	margin-left: -1px;
 }
